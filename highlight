@@ -1,0 +1,289 @@
+
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML xmlns:v="urn:schemas-microsoft-com:vml">
+<HEAD>
+<TITLE> New Document </TITLE>
+<META NAME="Generator" CONTENT="EditPlus">
+<META NAME="Author" CONTENT="">
+<META NAME="Keywords" CONTENT="">
+<META NAME="Description" CONTENT="">
+<link rel="Shortcut Icon" href="shell32.dll,20">
+<STYLE> #oTxt{
+color:#333333;
+background-color:#f0f0f0;
+font-family:Courier New;
+font-size:12px;
+margin:0;
+line-height:13px;
+border-left:none;
+overflow:scroll;
+}
+#oResult{
+color:#333333;
+background-color:#f0f0f0;
+font-family: Courier New;
+font-size:12px;
+margin:0;
+line-height:13px;
+border-left:none;
+overflow:scroll;
+height:164px;
+}
+</STYLE>
+</HEAD>
+
+<BODY>
+<div id="oEditor" style="width:400;height:164px;padding:0;margin:0;border:none;border-right:solid 2px gray;border-bottom:solid 2px gray;">
+<textarea id=oTxt wrap=off style="border:dashed 1px gray; border-right:none; border-bottom:none; width:400;height:164px;padding:2px;" onkeyup="_highlight()">
+
+//<!--
+// test comment
+// s = s.replace(/\/\//g, '');
+/*/
+'this is a block'
+'http://test.com'
+'comment !!'
+//*/
+//*/
+'string2'
+'http://test.com'
+"string1/*"
+//*/
+/*/
+'this is a block'
+'http://test.com'
+"comment !!"
+/*/
+"string1: start a comment /* "
+'http://test.com'
+'string2: end a comment */ '
+//*/
+
+/****************************\
+* code highlight             *
+*     necrocoder 2006.05.11 *
+\****************************/
+
+var sss = kkkk.innerHTML+"\r\n";
+for(var i=0;i<5;i++) sss += kkkk.innerHTML+"\r\n"+"\r\n";
+var tm = (new Date()).getTime();
+sss = sss.syntaxed();
+var dtm = (new Date()).getTime() - tm;
+aaa.innerHTML = sss;
+//aaaa.innerText = sss;
+document.write('highlighted in '+dtm+'ms.');
+
+
+/*
+* Examples
+*/
+Array.prototype.indexOf=function(o){for(var i=0;i<this.length;i++){if(this[i]==o)return i;}
+return-1;};Array.prototype.lastIndexOf=function(o){for(var i=this.length-1;i>=0;i--){if(this[i]==o)return i;}return-1;};Array.prototype.contains=function(o){return this.indexOf(o)!= -1;};Array.prototype.copy=function(o){return this.concat();};Array.prototype.insertAt=function(o,i){this.splice(i,0,o);};Array.prototype.insertBefore=function(o,o2){var i=this.indexOf(o2);if(i== -1)this.push(o);else this.splice(i,0,o);};Array.prototype.removeAt=function(i){this.splice(i,1);};Array.prototype.remove=function(o){var i=this.indexOf(o);if(i!= -1)this.splice(i,1);};String.prototype.trim=function(){return this.replace(/(^\s+)|\s+$/g,"");};Function.READ=1;Function.WRITE=2;Function.READ_WRITE=3;Function.prototype.addProperty=function(sName,nReadWrite){nReadWrite=nReadWrite||Function.READ_WRITE;var capitalized=sName.charAt(0).toUpperCase()+sName.substr(1);if(nReadWrite&Function.READ)
+this.prototype["get"+capitalized]=new Function("","return this._"+sName+";");if(nReadWrite&Function.WRITE)   this.prototype["set"+capitalized]=new Function(sName,"this._"+sName+" = "+sName+";");};function BiObject(){this._hashCode=BiObject._hashCodePrefix+Math.round(Math.random()*1000)+BiObject._hashCodePrefix+BiObject._hashCodeCounter++;}
+_p=BiObject.prototype=new Object;_p._className="BiObject";_p._disposed=false;_p._id=null;BiObject._hashCodeCounter=1;BiObject._hashCodePrefix="hc";BiObject.toHashCode=function(o){if(o._hashCode!=null)
+return o._hashCode;return o._hashCode=BiObject._hashCodePrefix+Math.round(Math.random()*1000)+BiObject._hashCodePrefix+BiObject._hashCodeCounter++;};BiObject.prototype.getDisposed=function(){return this._disposed;};BiObject.prototype.getId=function(){return this._id;};BiObject.prototype.setId=function(v){this._id=v;};BiObject.prototype.getUserData=function(){return this._userData;};BiObject.prototype.setUserData=function(v){this._userData=v;};_p.toHashCode=function(){return BiObject.toHashCode(this);};_p.dispose=function(){this._disposed=true;delete this._userData;};_p.toString=function(){if(this._className)
+return"[object "+this._className+"]";return"[object Object]";};_p.getProperty=function(sPropertyName){var getterName="get"+sPropertyName.charAt(0).toUpperCase()+sPropertyName.substr(1);if(typeof this[getterName]=="function")
+return this[getterName]();throw new Error("No such property, "+sPropertyName);};_p.setProperty=function(sPropertyName,oValue){var setterName="set"+sPropertyName.charAt(0).toUpperCase()+sPropertyName.substr(1);if(typeof this[setterName]=="function")
+this[setterName](oValue);else throw new Error("No such property, "+sPropertyName);};_p.setAttribute=function(sName,sValue,oParser)
+{var v;if(sValue=="true")
+v=true;else if(sValue=="false")
+v=false;else if(parseFloat(sValue)==sValue)
+v=parseFloat(sValue);else v=sValue;this.setProperty(sName,v);};_p.getAttribute=function(sName)
+{return String(this.getProperty(sName));};_p.addXmlNode=function(oNode,oParser)
+{if(oNode.nodeType==1)
+oParser.fromNode(oNode);};if(typeof BiObject=="undefined")
+BiObject=new Function;function BiBrowserCheck(){if(BiBrowserCheck._singleton)
+return BiBrowserCheck._singleton;var ua=navigator.userAgent;this._ie= /msie/i.test(ua);this._moz=navigator.product=="Gecko";this._platform=navigator.platform;if(this._moz)
+{/rv\:([^\);]+)(\)|;)/.test(ua);this._version=RegExp.$1;this._ie55=false;this._ie6=false;}
+else {/MSIE\s+([^\);]+)(\)|;)/.test(ua);this._version=RegExp.$1;this._ie55= /msie 5\.5/i.test(ua);this._ie6= /msie 6/i.test(ua);}
+BiBrowserCheck._singleton=this;}
+BiBrowserCheck.prototype=new BiObject;BiBrowserCheck.prototype.getIe=function()
+{return this._ie;};BiBrowserCheck.prototype.getIe55=function()
+{return this._ie55;};BiBrowserCheck.prototype.getIe6=function()
+{return this._ie6;};BiBrowserCheck.prototype.getMoz=function()
+{return this._moz;};BiBrowserCheck.prototype.getVersion=function()
+{return this._version;};BiBrowserCheck.prototype.getPlatform=function()
+{return this._platform;};var _br=new BiBrowserCheck;BiBrowserCheck.ie=_br.getIe();BiBrowserCheck.ie55=_br.getIe55();BiBrowserCheck.ie6=_br.getIe6();BiBrowserCheck.moz=_br.getMoz();BiBrowserCheck.version=_br.getVersion();BiBrowserCheck.platform=_br.getPlatform();_br=null;function BiUri(sBase,sRel)
+{this._params={};if(sBase)
+{this.setHref(sBase);if(sRel)
+this._setRelative(sRel)}}
+_p=BiUri.prototype=new BiObject;_p._className="BiUri";_p._scheme="";_p._userInfo="";_p._port="";_p._host="";_p._path="";_p._dirPath="";_p._fragment="";_p._query="";_p._hrefCache=null;BiUri.prototype.getScheme=function(){return this._scheme;};BiUri.prototype.getPath=function(){return this._path;};BiUri.prototype.getDirPath=function(){return this._dirPath;};BiUri.prototype.getHost=function(){return this._host;};BiUri.prototype.getPort=function(){return this._port;};BiUri.prototype.getFragment=function(){return this._fragment;};BiUri.prototype.getQuery=function(){return this._query;};BiUri.prototype.getUserInfo=function(){return this._userInfo;};BiUri.regExps={scheme:/^([^:]+)\:.+$/,user:/^([^@\/]+)@.+$/,host:/^([^:\/\?\#]+).*$/,port:/^:(\d+)/,path:/^([^\?#]*)/,dirPath:/^(.*\/)[^\/]*$/,fragment:/^[^#]*#(.*)$/,absUri:/^\w(\w|\d|\+|\-|\.)*:/i};_p.toString=function()
+{return this.getHref();};_p.setHref=function(s)
+{this._hrefCache=null;s=String(s);this._scheme="";this._userInfo="";this._host="";this._port=null;this._path="";this._dirPath="";this._query="";this._fragment="";this._params={};var err=new Error("Not a well formatted URI");var ok=BiUri.regExps.scheme.test(s);if(!ok)throw err;this._scheme=RegExp.$1;if(this._scheme=="mailto"||this._scheme=="news"||this._scheme=="view-source")
+s=s.substring(this._scheme.length+1);else s=s.substring(this._scheme.length+3);ok=BiUri.regExps.user.test(s);if(ok)
+{this._userInfo=RegExp.$1;s=s.substring(this._userInfo.length+1);}
+if(this._scheme!="file"||s.charAt(0)!="/")
+{ok=BiUri.regExps.host.test(s);if(!ok)
+throw err;this._host=RegExp.$1;s=s.substring(this._host.length);}
+ok=BiUri.regExps.port.test(s);if(ok)
+{this._port=Number(RegExp.$1);s=s.substring(RegExp.$1.length+1);}
+this._parsePathAndRest(s);};_p._parsePathAndRest=function(s)
+{var err=new Error("Not a well formatted URI");var ok=BiUri.regExps.path.test(s);if(!ok)
+throw err;this._path=RegExp.$1;s=s.substring(this._path.length);if(this._path==""&&(this._scheme=="file"||this._scheme=="http"||this._scheme=="https"||this._scheme=="ftp"))
+{this._path="/";}
+var segments=this._path.split("/");var sb=[];var j=0;for(var i=0;i<segments.length;i++)
+{if(segments[i]==".")
+continue;if(segments[i]=="..")
+{j--;delete sb[j];sb.length=j
+continue;}
+sb[j++]=segments[i];}
+this._path=sb.join("/");if(this._path.length>0)
+{ok=BiUri.regExps.dirPath.test(this._path);if(!ok)
+throw err;this._dirPath=RegExp.$1;}
+ok=BiUri.regExps.fragment.test(s);if(ok)
+{this._fragment=RegExp.$1;s=s.substring(0,s.length-this._fragment.length-1);this._fragment="#"+this._fragment.replace("#","%23");}
+this._query=s;s=s.substring(1);if(this._query!="")
+{var pairs=s.split(/\;|\&/);var parts;for(var i=0;i<pairs.length;i++)
+{parts=pairs[i].split("=");if(parts.length==2)
+this._params[parts[0]]=decodeURIComponent(parts[1]);else this._params[pairs[i]]=null;}}};_p._setRelative=function(s)
+{this._hrefCache=null;s=String(s);var isAbsolute=BiUri.regExps.absUri.test(s);if(isAbsolute)
+{this.setHref(s);return;}
+var dirPath=this._dirPath;this._path="";this._dirPath="";this._query="";this._fragment="";this._params={};if(s.charAt(0)=="/")
+{this._parsePathAndRest(s)}
+else this._parsePathAndRest(dirPath+s);};_p.getHref=function()
+{if(this._hrefCache!=null)
+return this._hrefCache;var s=this._scheme+(this._scheme=="mailto"||this._scheme=="news"||this._scheme=="view-source"?":":"://")+this._userInfo+(this._userInfo==""?" sb=[];for(var name in this._params)
+{if(this._params[name]!=null)
+sb.push(name+"="+encodeURIComponent(this._params[name]));else sb.push(name);}
+return this._hrefCache=s+this.getQuery()+this._fragment;};_p.getParam=function(sName)
+{return this._params[sName];};_p.setParam=function(sName,sValue)
+{this._hrefCache=null;return this._params[sName]=String(sValue);};_p.removeParam=function(sName)
+{this._hrefCache=null;delete this._params[sName];};_p.getQuery=function()
+{var sb=[];for(var name in this._params)
+{if(this._params[name]!=null)
+sb.push(name+"="+encodeURIComponent(this._params[name]));else sb.push(name);}
+return(sb.length>0?"?"+sb.join("&"):"");};function BiEvent(sType)
+{BiObject.call(this);this._type=sType;}
+_p=BiEvent.prototype=new BiObject;_p._className="BiEvent";_p._bubbles=false;_p._propagationStopped=true;_p._defaultPrevented=false;BiEvent.prototype.getType=function(){return this._type;};BiEvent.prototype.getTarget=function(){return this._target;};BiEvent.prototype.getCurrentTarget=function(){return this._currentTarget;};BiEvent.prototype.getBubbles=function(){return this._bubbles;};_p.initDispatch=function(){};_p.stopPropagation=function()
+{this._propagationStopped=true;};_p.preventDefault=function()
+{this._defaultPrevented=true;};_p.dispose=function()
+{this._target=null;this._currentTarget=null;};_p.getDefaultPrevented=function()
+{return this._defaultPrevented;};function BiMouseEvent(){};function BiKeyboardEvent(){};application=new BiApplication;application._coreScriptFiles_ie=["js/coreclasses.js","js/xmlrpc.js","js/guicomponents.js","js/gauge.ie.js","js/menu.ie.js","js/window.js","js/grids.js","js/databinding.js","js/chartingbase.js","js/charting.js","js/charting2.js","js/datetime.js"];application._coreScriptFiles_moz=["js/coreclasses.js","js/xmlrpc.js","js/guicomponents.js","js/menu.moz.js","js/window.js","js/grids.js","js/databinding.js","js/chartingbase.js","js/charting2.js","js/datetime.js"];if(BiBrowserCheck.ie)
+application._coreScriptFiles=application._coreScriptFiles_ie;else application._coreScriptFiles=application._coreScriptFiles_moz;
+
+//-->
+</textarea></div>
+<SCRIPT LANGUAGE="JavaScript">
+<!--
+var tm_highlight = null;
+function _highlight()
+{
+clearTimeout(tm_highlight);
+tm_highlight = setTimeout('document.getElementById("oResult").innerHTML = ("<nobr>"+document.getElementById("oTxt").value.formatJS()+"</nobr>");', 1000);
+}
+//String.prototype.div = document.createElement('div');
+String.prototype.toHtml = function () {
+return this
+.replace(/\&/g, '&amp;')
+.replace(/\</g, '&lt;')
+.replace(/\>/g, '&gt;')
+.replace(/\x20/g, '&nbsp;')
+.replace(/(\r\n|\r|\n)/g, '<br>');
+};
+String.prototype.formatJS = function ()
+{
+var s = this;
+var index = 0, brch=0;
+var keywords = ['abstract','boolean','break','byte','case','catch','char','class','const','continue','default','delete','do','double','else','extends','false','final','finally','float','for','function','goto','if','implements','import','in','instanceof','int','interface','long','native','new','null','package','private','protected','public','return','short','static','super','switch','synchronized','this','throw','throws','transient','true','try','typeof','var','void','while','with'];
+var objects = ['Anchor','anchors','Applet','applets','Area','Array','arguments','Button','Checkbox','Date','document','FileUpload','Form','forms','Frame','frames','Function','Hidden','history','Image','images','Link','links','Area','location','Math','MimeType','mimeTypes','navigator','options','Password','Plugin','plugins','Radio','Reset','RegExp','Select','String','Submit','Text','Textarea','window'];
+var specials = ['prototype','callee','caller','apply','call','encodeURIComponent','decodeURIComponent','parseInt','parseFloat','__defineGetter__','__defineSetter__'];
+var blocks = [];
+var indent = "", indent_fix="";
+s=s
+.replace(/\t/g, '    ')
+.replace(/\r\n|\r/g, "\n")
+.replace(/(\/\/[^\n]*(\n|$)|\/\*(\*(?!\/)|[^\*])*\*+\/|\"(\\\"|\\\\|[^\"\n])*\"|\'(\\\'|\\\\|[^\'\n])*\'|([=!\(\:\{\[\;]\s*)\/(\\.|[^\/\n])+\/[igm]*)/g,
+   function ($0)
+   {
+    var color = "#CCCCCC", ret = "'"; // comment
+    var kkk = $0;
+    if(kkk.charAt(0) == '"')
+     color = "#FF00FF"; // double quote
+    else if(kkk.charAt(0) == "'")
+     color = "#9900FF"; // single quote
+    else if(kkk.match(/^(?:[=!\(\:\{\[]\s*)(\/())
+    {
+     ret = kkk.replace(/^([=!\(\:\{\[]\s*)(\/(, "$1'");
+     kkk = kkk.replace(/^([=!\(\:\{\[]\s*)(\/(, "$2");
+     color = "#6666CC"; // regexp
+    }
+    blocks[blocks.length] = "<font color="+color+">"+kkk.toHtml()+"</font>";
+    return ret;
+   })
+// alert(blocks);s=s
+.replace(/(\}?[\n ]*;[\n ]*)/g, function ($0,$1){return $1.replace(/[\n ]/g, '')+"\n";})
+.replace(/\b(else)\b/g, "$1\n")
+.replace(/\b((case|default)[^:]*\:)/g, "$1\n")
+.replace(/(\{[\n ]*)((([A-Za-z\$\_][0-9A-Za-z\$\_]*|`)[\n ]*\:[\n ]*[^,\}]+,?)+)([\n ]*\})/g, function ($0,$1,$2,$3,$4,$5)
+   {
+    return $1+$2.replace(/[\n ]+/g, ' ').replace(/(([A-Za-z\$\_][0-9A-Za-z\$\_]*|`)\:[^,\}]+,?)/g, "$1\n")+$5;
+   })
+.replace(/[\n ]*(\{|\};?)[\n ]*/g, function ($0, $1)
+   {
+    if($1.charAt(0) == '}') brch--;
+    var ss = "\n";
+    for(var i=0;i<brch;i++) ss += "    ";
+    if($1 == '{') brch++;
+    return ss+$1+"\n";
+   })
+.replace(/[\n ]*\{[\n ]*\}/g, '{}')
+.replace(/^[ ]*([^\{\}])/g, "$1")
+.replace(/(\n\s*for\b[^\n]*\;\s*)\n/g, '$1')
+.replace(/(\n\s*for\b[^\n]*\;\s*)\n/g, '$1')
+.replace(/\n\s*(for|while|if|switch)\b[^\n]*; *\n/g, function ($0, $1)
+   {
+    var le = 0;
+    for(var i=0;i<$0.length;i++)
+     if($0.charAt(i) == '(') le++; else if($0.charAt(i) == ')'){le--; if(le == 0)return $0.substr(0,i+1)+"\n"+$0.substr(i+1,$0.length);}
+   })
+.replace(/(\n *)*(\n *)/g, "$2")
+.replace(/(`\s*)\+(?=\s*`)/g, "$1\n+")
+.replace(/( *)([^\n]*)\n/g, function ($0, space, text)
+   {
+    var ret = $0;
+    if(text.match(/^\{/))
+    {
+     indent = space+"    ";
+     indent_fix = "";
+    }
+    else if(text.match(/^\}/))
+    {
+     indent = space;
+     indent_fix = "";
+    }
+    else
+    {
+     if(text.match(/^(case|default)\b/))
+      ret = indent.substr(0,indent.length-4) + text;
+     else
+      ret = indent + indent_fix + text;
+     if(text.match(/^(if|for|else|var|while)\b/) && !text.match(/\;\s*$/))
+      indent_fix = "    ";
+     else if(!text.match(/[^\;]\s*$/))
+      indent_fix = "";
+     if(text.charAt(0)=='+')
+      ret = "    "+ret;
+     ret += "\n";
+    }
+    return ret;
+   })
+.replace(/\&/g, '&amp;')
+.replace(/\</g, '&lt;')
+.replace(/\>/g, '&gt;')
+.replace(/\x20/g, '&nbsp;')
+.replace(eval('/\\b('+keywords.join('|')+')\\b/g'),'<font color=blue>$1</font>') // keywords
+.replace(eval('/\\b('+objects.join('|')+')\\b/g'),'<font color=red>$1</font>') // objects
+.replace(eval('/\\b('+specials.join('|')+')\\b/g'),'<font color=#0099CC>$1</font>') // objects
+.replace(/\n/g, '<br>')
+.replace(/\'/g, function ($0){return blocks[index++];});
+return s;
+}
+tm_highlight = setTimeout('document.getElementById("oResult").innerHTML = ("<nobr>"+document.getElementById("oTxt").value.formatJS()+"</nobr>");', 1);
+//-->
+</SCRIPT>
+<hr style="color:black;height:2px;">
+<div id="oResult" style="width:100%;height:164px;padding:0;margin:0;border: dashed 1px gray;border-right:solid 2px gray;border-bottom:solid 2px gray;" contentEditable>
+</div>
+</BODY>
+</HTML>
